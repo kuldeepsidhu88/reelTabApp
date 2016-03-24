@@ -1,31 +1,44 @@
 angular.module('app.controllers', [])
-  
-.controller('postsListPageCtrl', function($scope) {
+
+// recentpostlist controller  
+.controller('recentPostsListCtrl', function($scope) {
 
 })
-   
-.controller('categoriesListPageCtrl', function($scope) {
-	
+
+// authorslist controller
+.controller('authorsListCtrl', function($scope) {
 
 })
-   
-.controller('authorListPageCtrl', function($scope) {
 
-})
-      
-.controller('postDetailPageCtrl', function($scope) {
-
-})
-   
-.controller('categoryPostListCtrl', function($scope) {
-
-})
-   
+// authorpostlist contoller
 .controller('authorsPostListCtrl', function($scope) {
 
 })
-   
+
+// categories list controller
+.controller('categoriesListCtrl', function($scope) {
+	
+
+})
+
+// categorypostlist controller   
+.controller('categoryPostListCtrl', function($scope) {
+
+})
+
+// aboutus controller   
 .controller('aboutUsCtrl', function($scope) {
 
 })
+
+// post detail controller   
+.controller('postDetailCtrl', function($scope) {
+
+})
+
+
+
+
+
+
  

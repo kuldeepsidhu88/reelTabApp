@@ -8,43 +8,91 @@ angular.module('app.routes', ['ionicUIRouter'])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-  
-
-      .state('tabsController.recentPostsListPage', {
-    url: '/page2',
-    views: {
-      'tab1': {
-        templateUrl: 'templates/recentPostsList.html',
-        controller: 'postsListPageCtrl'
-      }
-    }
-  })
-
-  .state('tabsController.categoriesListPage', {
-    url: '/page3',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/categoriesListPage.html',
-        controller: 'categoriesListPageCtrl'
-      }
-    }
-  })
-
-  .state('tabsController.authorListPage', {
-    url: '/page4',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/authorListPage.html',
-        controller: 'authorListPageCtrl'
-      }
-    }
-  })
-
   .state('tabsController', {
     url: '/tab',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
+  
+  .state('tabsController.recentPostsListPage', {
+    url: '/recentpostlist',
+    views: {
+      'tab-recentposts': {
+        templateUrl: 'templates/recentPostsList.html',
+        controller: 'recentPostsListCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.authorListPage', {
+    url: '/authors',
+    views: {
+      'tab-authors': {
+        templateUrl: 'templates/authorsList.html',
+        controller: 'authorsListCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.categoriesListPage', {
+    url: '/categories',
+    views: {
+      'tab-categories': {
+        templateUrl: 'templates/categoriesList.html',
+        controller: 'categoriesListCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.aboutUsPage', {
+    url: '/aboutus',
+    views: {
+      'tab-aboutus': {
+        templateUrl: 'templates/aboutUs.html',
+        controller: 'aboutUsCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.categoryPostList', {
+    url: '/categorypostlist',
+    views: {
+      'tab-categories': {
+        templateUrl: 'templates/categoryPostList.html',
+        controller: 'categoryPostListCtrl'
+      }
+    }
+  })
+  
+  .state('tabsController.authorsPostList', {
+    url: '/authorspostlist',
+    views: {
+      'tab-authors': {
+        templateUrl: 'templates/authorsPostList.html',
+        controller: 'authorsPostListCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.postDetailPage', {
+    url: '/postdetail',
+    views: {
+      'tab-recentposts': {
+        templateUrl: 'templates/postDetail.html',
+        controller: 'postDetailCtrl'
+      },
+      'tab-categories': {
+        templateUrl: 'templates/postDetail.html',
+        controller: 'postDetailCtrl'
+      },
+      'tab-authors': {
+        templateUrl: 'templates/postDetail.html',
+        controller: 'postDetailCtrl'
+      }
+    }
+  })
+
+  $urlRouterProvider.otherwise('/tab/recentpostlist')
 
   /* 
     The IonicUIRouter.js UI-Router Modification is being used for this route.
@@ -60,56 +108,5 @@ angular.module('app.routes', ['ionicUIRouter'])
       /page1/tab2/page5
       /page1/tab3/page5
   */
-  .state('tabsController.postDetailPage', {
-    url: '/page5',
-    views: {
-      'tab1': {
-        templateUrl: 'templates/postDetailPage.html',
-        controller: 'postDetailPageCtrl'
-      },
-      'tab2': {
-        templateUrl: 'templates/postDetailPage.html',
-        controller: 'postDetailPageCtrl'
-      },
-      'tab3': {
-        templateUrl: 'templates/postDetailPage.html',
-        controller: 'postDetailPageCtrl'
-      }
-    }
-  })
-
-  .state('tabsController.categoryPostList', {
-    url: '/page6',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/categoryPostList.html',
-        controller: 'categoryPostListCtrl'
-      }
-    }
-  })
-
-  .state('tabsController.authorsPostList', {
-    url: '/page7',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/authorsPostList.html',
-        controller: 'authorsPostListCtrl'
-      }
-    }
-  })
-
-  .state('tabsController.aboutUsPage', {
-    url: '/aboutus',
-    views: {
-      'tab-aboutus': {
-        templateUrl: 'templates/aboutUs.html',
-        controller: 'aboutUsCtrl'
-      }
-    }
-  })
-
-$urlRouterProvider.otherwise('/tab/page2')
-
-  
 
 });
