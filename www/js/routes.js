@@ -10,11 +10,11 @@ angular.module('app.routes', ['ionicUIRouter'])
     
   
 
-      .state('tabsController.postsListPage', {
+      .state('tabsController.recentPostsListPage', {
     url: '/page2',
     views: {
       'tab1': {
-        templateUrl: 'templates/postsListPage.html',
+        templateUrl: 'templates/recentPostsList.html',
         controller: 'postsListPageCtrl'
       }
     }
@@ -41,7 +41,7 @@ angular.module('app.routes', ['ionicUIRouter'])
   })
 
   .state('tabsController', {
-    url: '/page1',
+    url: '/tab',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
@@ -99,16 +99,16 @@ angular.module('app.routes', ['ionicUIRouter'])
   })
 
   .state('tabsController.aboutUsPage', {
-    url: '/page8',
+    url: '/aboutus',
     views: {
-      'tab4': {
-        templateUrl: 'templates/aboutUsPage.html',
-        controller: 'aboutUsPageCtrl'
+      'tab-aboutus': {
+        templateUrl: 'templates/aboutUs.html',
+        controller: 'aboutUsCtrl'
       }
     }
   })
 
-$urlRouterProvider.otherwise('/page1/page2')
+$urlRouterProvider.otherwise('/tab/page2')
 
   
 

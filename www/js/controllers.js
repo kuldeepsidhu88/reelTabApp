@@ -5,6 +5,7 @@ angular.module('app.controllers', [])
 })
    
 .controller('categoriesListPageCtrl', function($scope) {
+	
 
 })
    
@@ -24,7 +25,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('aboutUsPageCtrl', function($scope) {
+.controller('aboutUsCtrl', function($scope) {
 
 })
  
