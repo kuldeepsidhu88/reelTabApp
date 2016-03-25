@@ -44,6 +44,16 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })
 
+  .state('tabsController.categoryPostList', {
+    url: '/categories/:categoryId/:categoryName',
+    views: {
+      'tab-categories': {
+        templateUrl: 'templates/categoryPostList.html',
+        controller: 'categoryPostListCtrl'
+      }
+    }
+  })
+
   .state('tabsController.aboutUsPage', {
     url: '/aboutus',
     views: {
@@ -54,7 +64,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })
 
-  .state('tabsController.categoryPostList', {
+  /*.state('tabsController.categoryPostList', {
     url: '/categorypostlist',
     views: {
       'tab-categories': {
@@ -62,7 +72,7 @@ angular.module('app.routes', ['ionicUIRouter'])
         controller: 'categoryPostListCtrl'
       }
     }
-  })
+  })*/
   
   .state('tabsController.authorsPostList', {
     url: '/authorspostlist',
@@ -75,7 +85,7 @@ angular.module('app.routes', ['ionicUIRouter'])
   })
 
   .state('tabsController.postDetailPage', {
-    url: '/postdetail',
+    url: '/postdetail/:postId',
     views: {
       'tab-recentposts': {
         templateUrl: 'templates/postDetail.html',
