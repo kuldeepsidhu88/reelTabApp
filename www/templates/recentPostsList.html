@@ -1,10 +1,9 @@
 <ion-view style="" title="Recent Posts">
-    <ion-content class="has-header" overflow-scroll="true" padding="true">
-        <ion-list style=""></ion-list>
+    <ion-content class="has-header" overflow-scroll="true" padding="true">        
         <ion-list style="">
-            <ion-item style="" ui-sref="tabsController.postDetailPage">Post Title 1</ion-item>
-            <ion-item style="" ui-sref="tabsController.postDetailPage">Post Title 2</ion-item>
-            <ion-item style="" ui-sref="tabsController.postDetailPage">Post Title 3</ion-item>
+            <ion-item ng-repeat="post in recentpostslist" type="item-text-wrap" href="#/tab/tab-recentposts/postdetail/{{post.id}}">
+        		<h2>{{post.title}}</h2>
+        	</ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

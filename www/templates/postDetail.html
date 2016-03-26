@@ -1,6 +1,6 @@
-<ion-view style="" title="Post Detail">
+<ion-view style="" title="{{post.title}}">
     <ion-content class="has-header" overflow-scroll="true" padding="true">
-        <h2 style="">ਕੁਕਨੂਸ – ਅੰਮ੍ਰਿਤਾ ਪ੍ਰੀਤਮ</h2>
+        <!-- <h2 style="">ਕੁਕਨੂਸ – ਅੰਮ੍ਰਿਤਾ ਪ੍ਰੀਤਮ</h2>
         <div style="">
             <p>ਲਿਖ ਜਾ ਮੇਰੀ ਤਕਦੀਰ ਨੂੰ ਮੇਰੇ ਲਈ</p>
 
@@ -41,6 +41,11 @@
             <p>ਰੱਜ ਕੇ ਅੰਬਰ ਜਦੋਂ ਫਿਰ ਰੋਏਗਾ</p>
 
             <p>ਫਿਰ ਨਵਾਂ ਕੁਕਨੂਸ ਪੈਦਾ ਹੋਏਗਾ ……</p>
+        </div> -->
+        <h2 style="">{{post.title}}</h2>
+        <div style="">
+           <p>{{post.content}}</p>
+           <h2>{{post.link}}</h2>
         </div>
         <div style="">
             <h3>Share with Friends :</h3>
