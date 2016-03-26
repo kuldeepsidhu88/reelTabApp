@@ -34,6 +34,16 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })
 
+  .state('tabsController.authorsPostList', {
+    url: '/authors/:authorSlug/:authorName',
+    views: {
+      'tab-authors': {
+        templateUrl: 'templates/authorsPostList.html',
+        controller: 'authorsPostListCtrl'
+      }
+    }
+  })
+
   .state('tabsController.categoriesListPage', {
     url: '/categories',
     views: {
@@ -74,7 +84,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })*/
   
-  .state('tabsController.authorsPostList', {
+  /*.state('tabsController.authorsPostList', {
     url: '/authorspostlist',
     views: {
       'tab-authors': {
@@ -82,7 +92,7 @@ angular.module('app.routes', ['ionicUIRouter'])
         controller: 'authorsPostListCtrl'
       }
     }
-  })
+  })*/
 
   .state('tabsController.postDetailPage', {
     url: '/postdetail/:postId',
