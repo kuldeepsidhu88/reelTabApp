@@ -104,7 +104,7 @@ angular.module('app.controllers', [])
             	var id = response[i].id;
             	var name = response[i].name;
 				var count = response[i].count;
-				if(count>0){
+				if(count>0 && id != 15){
 					category['id']=id;
 					category['name']=name;
 					category['count']=count;
