@@ -174,9 +174,15 @@ angular.module('app.controllers', [])
         	
         	if(type=='post'){
 				post['id']=id;
-				post['title']=$sce.trustAsHtml(titleRendered);
+				var title = $sce.trustAsHtml(titleRendered);
+				post['title']=title;
 				post['link']=link;
-				post['content']=$sce.trustAsHtml(contentRendered);
+				var content = contentRendered.replace(/<aside.*\n.*/g,'');
+				content = content.concat('<br/><h4>ਇਸ ਲਿਖਤ ਨੂੰ ਆਪਣੇ ਦੋਸਤਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ</h4>');
+				post['content']=$sce.trustAsHtml(content);
+				post['fbShareURL']=encodeURI('http://www.facebook.com/sharer.php?u='+link+'&t='+title);
+				post['twitterShareURL']=encodeURI('https://twitter.com/intent/tweet?text='+title+'&url='+link+'&via=punjabireel');
+				post['whatsappShareURL']=encodeURI('whatsapp://send?text='+link);
 				$scope.post = post;
 			}
         })
