@@ -2,7 +2,7 @@
     <ion-content class="has-header" overflow-scroll="true" padding="true">
         <ion-list style="">
             <ion-item ng-repeat="post in categorypostlist" type="item-text-wrap" href="#/tab/tab-categories/postdetail/{{post.id}}">
-        		<h2>{{post.title}}</h2>
+        		<h2 ng-bind-html="post.title"></h2>
         	</ion-item>
         </ion-list>
     </ion-content>

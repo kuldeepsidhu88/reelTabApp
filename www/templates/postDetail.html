@@ -41,12 +41,7 @@
             <p>ਰੱਜ ਕੇ ਅੰਬਰ ਜਦੋਂ ਫਿਰ ਰੋਏਗਾ</p>
 
             <p>ਫਿਰ ਨਵਾਂ ਕੁਕਨੂਸ ਪੈਦਾ ਹੋਏਗਾ ……</p>
-        </div> -->
-        <h2 style="">{{post.title}}</h2>
-        <div style="">
-           <p>{{post.content}}</p>
-           <h2>{{post.link}}</h2>
-        </div>
+        </div> 
         <div style="">
             <h3>Share with Friends :</h3>
         </div>
@@ -54,5 +49,11 @@
         <button class="button button-calm  button-block icon ion-social-twitter" style="font-weight:bold;" id="postDetailPage-button6">Twitter</button>
         <button class="button button-balanced  button-block icon ion-social-whatsapp" style="font-weight:bold;" id="postDetailPage-button8">WhatsApp</button>
         <div style="" class="button-bar"></div>
+        -->
+        <h2 ng-bind-html="post.title"></h2>
+        <div style="">
+           <p ng-bind-html="post.content"></p>
+           <h3>{{post.link}}</h3>
+        </div>
     </ion-content>
 </ion-view>

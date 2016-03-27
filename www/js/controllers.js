@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
 
 // recentpostlist controller  
-.controller('recentPostsListCtrl', function($scope,$http) {
+.controller('recentPostsListCtrl', function($scope,$http,$sce) {
 	var recentpostslist = [];
 	// TODO: get posts
 	var getPostsURL = "http://www.punjabireel.com/wp-json/wp/v2/posts";
@@ -15,7 +15,7 @@ angular.module('app.controllers', [])
 	        	var titleRendered = response[i].title.rendered;
 				if(type=='post'){
 					post['id']=id;
-					post['title']=titleRendered;
+					post['title']=$sce.trustAsHtml(titleRendered);
 					recentpostslist.push(post);
 				}
             }
@@ -59,7 +59,7 @@ angular.module('app.controllers', [])
 })
 
 // authorpostlist contoller
-.controller('authorsPostListCtrl', function($scope,$stateParams,$http) {
+.controller('authorsPostListCtrl', function($scope,$stateParams,$http,$sce) {
 	// http://punjabireel.com/wp-json/wp/v2/posts?filter[poet]=
 	var authorslug = $stateParams.authorSlug;
 
@@ -77,7 +77,7 @@ angular.module('app.controllers', [])
             	var title = titleRendered.replace("&#8211;","-");
             	if(type=='post'){
 					post['id']=id;
-					post['title']=title;
+					post['title']=$sce.trustAsHtml(titleRendered);
 					authorpostlist.push(post);
 				}
             }
@@ -136,11 +136,10 @@ angular.module('app.controllers', [])
             	var type = response[i].type;
             	var id = response[i].id;
             	var titleRendered = response[i].title.rendered;
-            	var title = titleRendered.replace("&#8211;","-");
+            	
             	if(type=='post'){
 					post['id']=id;
-					post['title']=title;
-					
+					post['title']=$sce.trustAsHtml(titleRendered);
 					categorypostlist.push(post);
 				}
             }
@@ -158,7 +157,7 @@ angular.module('app.controllers', [])
 })
 
 // post detail controller   
-.controller('postDetailCtrl', function($scope,$stateParams,$http) {
+.controller('postDetailCtrl', function($scope,$stateParams,$http,$sce) {
 	var postId = $stateParams.postId;
 
 	// TODO: get post detail 
@@ -175,9 +174,9 @@ angular.module('app.controllers', [])
         	
         	if(type=='post'){
 				post['id']=id;
-				post['title']=titleRendered;
+				post['title']=$sce.trustAsHtml(titleRendered);
 				post['link']=link;
-				post['content']=contentRendered;
+				post['content']=$sce.trustAsHtml(contentRendered);
 				$scope.post = post;
 			}
         })
